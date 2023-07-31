@@ -47,6 +47,7 @@ public class DatVeXeKhach extends SQLiteOpenHelper{
                 "so_ghe INTEGER," +
                 "gia_ve REAL," +
                 "ngay_dat_ve TEXT," +
+                "gio_dat_ve TEXT," +
                 "id_chuyenxe INTEGER," +
                 "id_khachhang INTEGER," +
                 "FOREIGN KEY (id_chuyenxe) REFERENCES ChuyenXe(id)," +
