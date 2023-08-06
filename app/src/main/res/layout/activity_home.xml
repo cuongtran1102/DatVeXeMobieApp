@@ -1,10 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img_11"
     tools:context=".HomeActivity">
+    <EditText
+        android:id="@+id/etBenDenHome"
+        android:layout_width="275dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:hint="Bến đến"
+        android:drawableLeft="@drawable/baseline_edit_location_24"
+        android:background="#30ffffff"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etBenDiHome" />
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/etNgayKhoiHanhHome"
+        android:layout_width="275dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Ngày khởi hành"
+        android:inputType="none"
+        android:clickable="true"
+        android:focusable="false"
+        android:background="#30ffffff"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:drawableLeft="@drawable/baseline_edit_calendar_24"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etBenDenHome" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="381dp"
+        android:layout_height="406dp"
+        android:layout_margin="8dp"
+        android:layout_marginStart="403dp"
+        android:layout_marginTop="438dp"
+        android:layout_marginEnd="403dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTraCuu"> <!-- Đặt bottom constraint cho RecyclerView -->
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:gravity="center"
+        android:text="Tra Cứu"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etBenDiHome"
+        android:layout_width="275dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:drawableLeft="@drawable/baseline_edit_location_24"
+        android:hint="Bến đi"
+        android:background="#30ffffff"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/btnTraCuu"
+        android:layout_width="235dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="14dp"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:text="Tra Cứu"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNgayKhoiHanhHome" />
+
+    <!-- TabLayout -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
