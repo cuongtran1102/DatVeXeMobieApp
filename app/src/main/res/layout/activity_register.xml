@@ -154,7 +154,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="172dp"
         android:background="#30ffffff"
-        android:drawableLeft="@drawable/baseline_calendar_today_24"
+        android:drawableLeft="@drawable/baseline_edit_calendar_24"
         android:drawablePadding="20dp"
         android:hint="Date"
         android:padding="20dp"
