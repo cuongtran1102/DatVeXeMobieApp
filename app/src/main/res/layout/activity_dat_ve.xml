@@ -4,6 +4,195 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img_7"
     tools:context=".DatVeActivity">
 
+    <TextView
+        android:id="@+id/txtTienVe"
+        android:layout_width="171dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="32dp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnDatVe"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="171dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="33dp"
+        android:text="Tiền Vé:"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnDatVe"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtSLGhe"
+        android:layout_width="102dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="10dp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtTienVe"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="171dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="9dp"
+        android:text="Số lượng ghế đã chọn:"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="132dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="19dp"
+        android:text="Danh sách ghế:"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/txtNgayDidv"
+        android:layout_width="132dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="16dp"
+        android:text="date"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/txtGioDidv"
+        android:layout_width="102dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="15dp"
+        android:text="time"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNoiDendv" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="132dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Ngày đi:"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNoiDidv" />
+
+    <TextView
+        android:id="@+id/txtNoiDidv"
+        android:layout_width="132dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBackdv" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="65dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/baseline_arrow_forward_24"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/txtNoiDidv"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <ImageButton
+        android:id="@+id/btnBackdv"
+        android:layout_width="67dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="2dp"
+        android:background="@drawable/img_7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_arrow_back_24_white" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="64dp"
+        android:text="Thông tin chuyến xe"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtNoiDendv"
+        android:layout_width="132dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="26dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/grGhe"
+        android:layout_width="376dp"
+        android:layout_height="307dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="18dp"
+        app:columnCount="4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9">
+
+    </androidx.gridlayout.widget.GridLayout>
+
+    <Button
+        android:id="@+id/btnDatVe"
+        android:layout_width="215dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginBottom="28dp"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:text="Đặt Vé"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
