@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="131dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="600dp"
+        android:background="@color/white"
+        android:baselineAligned="false"
+
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="626dp">
+
+        <!-- Thêm các Button khác nếu cần -->
+
+
+        <ImageButton
+            android:id="@+id/search"
+            android:layout_width="109dp"
+            android:layout_height="142dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:padding="16dp"
+
+            android:src="@drawable/outline_travel_explore_24"
+            android:text="Nút 2"
+            android:textColor="@android:color/white" />
+
+        <ImageButton
+            android:id="@+id/button2"
+            android:layout_width="109dp"
+            android:layout_height="142dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:src="@drawable/outline_confirmation_number_24"
+            android:text="Nút 2"
+            android:textColor="@android:color/white" />
+
+        <ImageButton
+            android:id="@+id/button3"
+            android:layout_width="109dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:padding="16dp"
+            android:src="@drawable/outline_shopping_cart_24"
+            android:text="Nút 1"
+            android:textColor="@android:color/white" />
+
+        <ImageButton
+            android:id="@+id/button1"
+            android:layout_width="109dp"
+            android:layout_height="133dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:padding="16dp"
+            android:src="@drawable/outline_manage_accounts_24"
+            android:text="Nút 2"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+
+
+</FrameLayout>

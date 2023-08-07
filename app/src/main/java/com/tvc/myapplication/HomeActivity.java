@@ -41,6 +41,9 @@ public class HomeActivity extends AppCompatActivity implements CarAdapter.OnItem
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+//        getSupportFragmentManager().beginTransaction()
+//                .replace(R.id.fragment_my, new MyFragment ())
+//                .commit();
         chuyenXeService = new ChuyenXeService(this);
         etDiaDiemDi = findViewById(R.id.etBenDiHome);
         etDiaDiemDen = findViewById(R.id.etBenDenHome);
