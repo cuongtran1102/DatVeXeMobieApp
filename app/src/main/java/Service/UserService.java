@@ -47,4 +47,17 @@ public class UserService {
         database.insert("User", null, values);
         database.close();
     }
+    public int getIDByUserName(String userName){
+        int id = 0;
+        SQLiteDatabase database = db.getReadableDatabase();
+        String sql = "select id from User where user_name = ?";
+        Cursor cursor = database.rawQuery(sql, new String[]{userName});
+        cursor.moveToPosition(-1);
+        while (cursor.moveToNext()){
+            id = cursor.getInt(0);
+        }
+        cursor.close();
+        database.close();
+        return id;
+    }
 }

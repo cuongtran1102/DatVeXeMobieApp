@@ -10,7 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.tvc.myapplication.R;
 
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 import Pojo.ChuyenXe;
 
@@ -43,7 +45,10 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarViewHolder> {
         holder.tvTripName.setText(chuyenXe.getTenChuyenXe());
         holder.tvTripDate.setText(chuyenXe.getNgayDi().toString());
         holder.tvTripTime.setText(chuyenXe.getGioXuatPhat().toString());
-        holder.tvTripPrice.setText(Float.toString(chuyenXe.getGiaVe()));
+        NumberFormat format = NumberFormat.getCurrencyInstance(new
+                Locale("vi", "VN"));
+        String formattedGiaVe = format.format(chuyenXe.getGiaVe());
+        holder.tvTripPrice.setText(formattedGiaVe);
 
         //sự kiện onclick cho carview
         holder.itemView.setOnClickListener(new View.OnClickListener() {

@@ -17,23 +17,24 @@
 
         android:layout_alignParentEnd="true"
         android:layout_marginStart="140dp"
-        android:layout_marginTop="596dp"
+        android:layout_marginTop="37dp"
         android:backgroundTint="@color/design_default_color_secondary"
         android:text="ĐĂNG Ký "
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/etNgaySinh" />
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="17dp"
         android:gravity="center"
         android:text="Đăng Ký"
         android:textColor="@color/white"
         android:textSize="35dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btnBack" />
 
     <EditText
 
@@ -43,20 +44,19 @@
 
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="460dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="12dp"
         android:background="#30ffffff"
         android:drawableLeft="@drawable/pass"
         android:drawablePadding="20dp"
         android:hint="PassWord"
+        android:inputType="textPassword"
+        android:maxLength="10"
         android:padding="20dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        android:maxLength="10"
-        android:inputType="textPassword"/>
+        app:layout_constraintTop_toBottomOf="@+id/etUserName" />
 
     <EditText
         android:id="@+id/etUserName"
@@ -65,19 +65,18 @@
 
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="528dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="12dp"
         android:background="#30ffffff"
         android:drawableLeft="@drawable/nguoi"
         android:drawablePadding="20dp"
         android:hint="UserName"
+        android:maxLength="10"
         android:padding="20dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        android:maxLength="10"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
         android:id="@+id/etName"
@@ -86,20 +85,18 @@
         android:layout_height="60dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="316dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="13dp"
         android:background="#30ffffff"
         android:drawableLeft="@drawable/ten"
         android:drawablePadding="20dp"
         android:hint="Name"
+        android:maxLength="50"
         android:padding="20dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        android:maxLength="50"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/etConfirmPassWord" />
 
     <EditText
         android:id="@+id/etConfirmPassWord"
@@ -108,20 +105,19 @@
 
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="388dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="12dp"
         android:background="#30ffffff"
         android:drawableLeft="@drawable/pass"
         android:drawablePadding="20dp"
         android:hint="Confirm PassWord"
+        android:inputType="textPassword"
+        android:maxLength="10"
         android:padding="20dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        android:maxLength="10"
-        android:inputType="textPassword"/>
+        app:layout_constraintTop_toBottomOf="@+id/etPassWord" />
 
     <EditText
         android:id="@+id/etSDT"
@@ -130,20 +126,19 @@
 
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="244dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="14dp"
         android:background="#30ffffff"
         android:drawableLeft="@drawable/outline_settings_phone_24"
         android:drawablePadding="20dp"
         android:hint="Phone"
+        android:inputType="phone"
+        android:maxLength="10"
         android:padding="20dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        android:maxLength="10"
-        android:inputType="phone"/>
+        app:layout_constraintTop_toBottomOf="@+id/etName" />
 
     <EditText
         android:id="@+id/etNgaySinh"
@@ -152,39 +147,29 @@
 
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="172dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="10dp"
         android:background="#30ffffff"
+        android:clickable="true"
         android:drawableLeft="@drawable/baseline_edit_calendar_24"
         android:drawablePadding="20dp"
+        android:focusable="false"
         android:hint="Date"
+        android:inputType="none"
         android:padding="20dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        android:inputType="none"
-        android:clickable="true"
-        android:focusable="false"/>
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#30ffffff"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/etSDT" />
 
     <ImageButton
         android:id="@+id/btnBack"
-        android:layout_width="86dp"
-        android:layout_height="63dp"
+        android:layout_width="69dp"
+        android:layout_height="61dp"
+        android:background="@drawable/img_7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_arrow_back_24" />
+        app:srcCompat="@drawable/baseline_arrow_back_24_white" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

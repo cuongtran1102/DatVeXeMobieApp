@@ -2,7 +2,6 @@ package com.tvc.myapplication;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,11 +13,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ImageButton;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -27,6 +24,8 @@ import java.util.Locale;
 import Pojo.ChuyenXe;
 import Service.CarAdapter;
 import Service.ChuyenXeService;
+import Service.DatVeService;
+import Service.UserService;
 
 public class HomeActivity extends AppCompatActivity implements CarAdapter.OnItemClickListener{
     private RecyclerView recyclerView;
@@ -36,11 +35,17 @@ public class HomeActivity extends AppCompatActivity implements CarAdapter.OnItem
     private EditText etNgayKhoiHanh, etDiaDiemDen, etDiaDiemDi;
     private Calendar calendar;
     private ChuyenXeService chuyenXeService;
+    private DatVeService datVeService;
+    private int user_ID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        Intent intent = getIntent();
+        String userName = intent.getStringExtra("USER_NAME");
+        UserService userService = new UserService(this);
+        setUser_ID(userService.getIDByUserName(userName));
         chuyenXeService = new ChuyenXeService(this);
         etDiaDiemDi = findViewById(R.id.etBenDiHome);
         etDiaDiemDen = findViewById(R.id.etBenDenHome);
@@ -63,7 +68,8 @@ public class HomeActivity extends AppCompatActivity implements CarAdapter.OnItem
             public void onClick(View view) {
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(HomeActivity.this);
                 alertDialogBuilder.setTitle("Thông báo");
-                alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                alertDialogBuilder.setPositiveButton("OK",
+                        new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
@@ -114,7 +120,11 @@ public class HomeActivity extends AppCompatActivity implements CarAdapter.OnItem
                 calendar.get(Calendar.MONTH),
                 calendar.get(Calendar.DAY_OF_MONTH)
         );
-        datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
+        // Set the minimum date to tomorrow
+        Calendar minDateCalendar = Calendar.getInstance();
+        minDateCalendar.add(Calendar.DAY_OF_MONTH, 1);
+        datePickerDialog.getDatePicker().setMinDate(minDateCalendar.getTimeInMillis());
+
         datePickerDialog.show();
     }
 
@@ -132,19 +142,14 @@ public class HomeActivity extends AppCompatActivity implements CarAdapter.OnItem
 
     private List<ChuyenXe> getCarListFromDatabase() {
         LocalDate currentDate = LocalDate.now();
-//        LocalTime currentTime = LocalTime.now();
         List<ChuyenXe> listChuyenXe = chuyenXeService.getListChuyenXe();
         List<ChuyenXe> resultListCX = new ArrayList<>();
-//
         for (ChuyenXe chuyenXe : listChuyenXe) {
             LocalDate ngayDi = chuyenXe.getNgayDi();
-//            LocalTime gioXuatPhat = chuyenXe.getGioXuatPhat();
-
             if (currentDate.compareTo(ngayDi) < 0) {
                 resultListCX.add(chuyenXe);
             }
         }
-
         return resultListCX;
     }
 
@@ -160,7 +165,15 @@ public class HomeActivity extends AppCompatActivity implements CarAdapter.OnItem
         intent.putExtra("GIO_DI", chuyenXe.getGioXuatPhat());
         intent.putExtra("GIA_VE", chuyenXe.getGiaVe());
         intent.putExtra("SO_LUONG_GHE", chuyenXe.getSoLuongGhe());
+        intent.putExtra("USER_ID", getUser_ID());
         startActivity(intent);
     }
 
+    public int getUser_ID() {
+        return user_ID;
+    }
+
+    public void setUser_ID(int user_ID) {
+        this.user_ID = user_ID;
+    }
 }
