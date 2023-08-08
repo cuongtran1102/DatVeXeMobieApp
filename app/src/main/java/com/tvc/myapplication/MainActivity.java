@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 else if(userService.checkLogin(etUserName.getText().toString(),
                         etPassWord.getText().toString())){
                     Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                    intent.putExtra("USER_NAME", etUserName.getText().toString());
                     startActivity(intent);
                 }
                 else {

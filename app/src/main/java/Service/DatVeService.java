@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import Pojo.DatVeXeKhach;
@@ -31,7 +32,8 @@ public class DatVeService {
         }
         database.close();
     }
-    public List<Integer> DSGheDaDatCuaCX(int idChuyenXe, List<Integer> dsGhe){
+    public List<Integer> DSGheDaDatCuaCX(int idChuyenXe){
+        List<Integer> dsGhe = new ArrayList<>();
         SQLiteDatabase database = db.getReadableDatabase();
         String sql = "select so_ghe from Ve where id_chuyenxe = ?";
         Cursor cursor = database.rawQuery(sql, new String[]{String.valueOf(idChuyenXe)});
