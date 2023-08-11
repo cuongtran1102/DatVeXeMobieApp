@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_quan_ly_chuyen_xe"
+            android:title="Quản lý chuyến xe"
+            android:icon="@drawable/baseline_directions_car_24"/>
+        <item android:id="@+id/nav_quan_ly_tai_khoan"
+            android:title="Quản lý tài khoản"
+            android:icon="@drawable/ic_baseline_person_outline_24"/>
+        <item android:id="@+id/nav_thong_ke"
+            android:title="Thống kê báo cáo"
+            android:icon="@drawable/baseline_bar_chart_24"/>
+    </group>
+    <item android:title="My account">
+        <menu>
+            <group android:checkableBehavior="single">
+            <item android:id="@+id/nav_profile"
+                android:title="Chỉnh sửa tài khoản"
+                android:icon="@drawable/taikhoan"/>
+            <item android:id="@+id/nav_logout"
+                android:title="Đăng xuất"
+                android:icon="@drawable/baseline_logout_24"/>
+            </group>
+        </menu>
+
+    </item>
+
+</menu>

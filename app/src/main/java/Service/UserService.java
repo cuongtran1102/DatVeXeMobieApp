@@ -23,6 +23,18 @@ public class UserService {
         cursor.close();
         return isExistAccount;
     }
+    public boolean checkUserRole(String userName){
+        SQLiteDatabase database = db.getReadableDatabase();
+        String sql = "select user_role from User where user_name = ?";
+        Cursor cursor = database.rawQuery(sql, new String[]{userName});
+        cursor.moveToPosition(-1);
+        while (cursor.moveToNext()){
+            if(cursor.getInt(0) == 0)
+                return true;
+        }
+        return false;
+    }
+
     public boolean checkUserName(String userName){
         SQLiteDatabase database = db.getReadableDatabase();
         String sql = "select * from User where user_name = ?";

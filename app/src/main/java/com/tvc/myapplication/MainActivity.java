@@ -81,9 +81,15 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if(userService.checkLogin(etUserName.getText().toString(),
                         etPassWord.getText().toString())){
-                    Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-                    intent.putExtra("USER_NAME", etUserName.getText().toString());
-                    startActivity(intent);
+                    if(userService.checkUserRole(etUserName.getText().toString()) == false){
+                        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                        intent.putExtra("USER_NAME", etUserName.getText().toString());
+                        startActivity(intent);
+                    }
+                    else{
+                        Intent intent = new Intent(MainActivity.this, AdminActivity.class);
+                        startActivity(intent);
+                    }
                 }
                 else {
                     Toast.makeText(MainActivity.this, "Sai tên tài khoản hoặc mật khẩu", Toast.LENGTH_SHORT).show();
