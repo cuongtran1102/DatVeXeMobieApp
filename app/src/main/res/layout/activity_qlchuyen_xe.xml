@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_3"
+    tools:context=".QLChuyenXeActivity">
+
+    <ImageButton
+        android:id="@+id/btnBackQLChuyenXe"
+        android:layout_width="57dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_arrow_back_24_white" />
+
+    <FrameLayout
+        android:id="@+id/frameLayoutQLChuyenXe"
+        android:layout_width="406dp"
+        android:layout_height="620dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/tabLayoutQLChuyenXe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBackQLChuyenXe">
+
+    </FrameLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayoutQLChuyenXe"
+        android:layout_width="408dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabThemChuyenXe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thêm chuyến xe" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabQLChuyenXe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quản lý chuyến xe"
+            tools:layout_editor_absoluteX="210dp"
+            tools:layout_editor_absoluteY="676dp" />
+
+    </com.google.android.material.tabs.TabLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
