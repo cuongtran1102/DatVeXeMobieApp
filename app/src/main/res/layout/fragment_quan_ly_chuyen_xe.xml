@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -7,5 +8,46 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/img_7"/>
+        android:background="@drawable/img_7">
+
+        <Button
+            android:id="@+id/btnQLTuyenDuong"
+            android:layout_width="356dp"
+            android:layout_height="66dp"
+
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="280dp"
+            android:backgroundTint="@color/design_default_color_secondary"
+            android:text="Quản Lý Tuyến Đường"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Quản lý chuyến xe"
+            android:textColor="@color/white"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnQLChuyenXe"
+            android:layout_width="356dp"
+            android:layout_height="66dp"
+
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="188dp"
+            android:backgroundTint="@color/design_default_color_secondary"
+            android:text="Quản Lý Chuyến Xe"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

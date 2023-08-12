@@ -13,6 +13,7 @@ import java.util.List;
 
 import Pojo.ChuyenXe;
 import Pojo.DatVeXeKhach;
+import Pojo.TuyenDuong;
 
 public class ChuyenXeService {
     private Context context;
@@ -98,7 +99,70 @@ public class ChuyenXeService {
                     giaNiemYet, loaiXe);
             listChuyenXe.add(c);
         }
+        cursor.close();
+        database.close();
         return listChuyenXe;
+    }
+    public List<TuyenDuong> getListTuyenDuong(){
+        SQLiteDatabase database = db.getReadableDatabase();
+        List<TuyenDuong> dsTuyenDuong = new ArrayList<>();
+        String sql = "select * from TuyenDuong";
+        Cursor cursor = database.rawQuery(sql, null);
+        cursor.moveToPosition(-1);
+        while(cursor.moveToNext()){
+            int id = cursor.getInt(0);
+            String tenTuyenDuong = cursor.getString(1);
+            String diaDiemDi = cursor.getString(2);
+            String diaDiemDen = cursor.getString(3);
+            int loaiXe = cursor.getInt(4);
+            float giaNiemYet = cursor.getFloat(5);
+            LocalTime gioXuatPhat = LocalTime.parse(cursor.getString(6),
+                    DateTimeFormatter.ISO_LOCAL_TIME);
+            TuyenDuong tuyenDuong = new TuyenDuong(id, tenTuyenDuong, diaDiemDi, diaDiemDen,
+                    loaiXe, giaNiemYet, gioXuatPhat);
+            dsTuyenDuong.add(tuyenDuong);
+        }
+        cursor.close();
+        database.close();
+        return dsTuyenDuong;
+    }
+    public List<TuyenDuong> getListTuyenDuong(String benDi, String benDen){
+        SQLiteDatabase database = db.getReadableDatabase();
+        List<TuyenDuong> dsTuyenDuong = new ArrayList<>();
+        String sql = "select * from TuyenDuong where dia_diem_di = ? and dia_diem_den = ?";
+        Cursor cursor = database.rawQuery(sql, new String[]{benDi, benDen});
+        cursor.moveToPosition(-1);
+        while (cursor.moveToNext()){
+            int id = cursor.getInt(0);
+            String tenTuyenDuong = cursor.getString(1);
+            String diaDiemDi = cursor.getString(2);
+            String diaDiemDen = cursor.getString(3);
+            int loaiXe = cursor.getInt(4);
+            float giaNiemYet = cursor.getFloat(5);
+            LocalTime gioXuatPhat = LocalTime.parse(cursor.getString(6),
+                    DateTimeFormatter.ISO_LOCAL_TIME);
+            TuyenDuong tuyenDuong = new TuyenDuong(id, tenTuyenDuong, diaDiemDi, diaDiemDen,
+                    loaiXe, giaNiemYet, gioXuatPhat);
+            dsTuyenDuong.add(tuyenDuong);
+        }
+        cursor.close();
+        database.close();
+        return dsTuyenDuong;
+    }
+    public boolean checkChuyenXe(String ngayKhoiHanh, int idTuyenDuong){
+        SQLiteDatabase database = db.getReadableDatabase();
+        String sql = "select * from ChuyenXe where ngay_di = ? " +
+                "and ma_tuyen_duong = ?";
+        Cursor cursor = database.rawQuery(sql, new String[]{ngayKhoiHanh,
+                String.valueOf(idTuyenDuong)});
+        cursor.moveToPosition(-1);
+        while (cursor.moveToNext()){
+            if(cursor.getString(1).equals(ngayKhoiHanh) &&
+            cursor.getInt(2) == idTuyenDuong){
+                return false;
+            }
+        }
+        return true;
     }
 
 }

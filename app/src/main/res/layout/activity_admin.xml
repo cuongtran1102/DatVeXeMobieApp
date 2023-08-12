@@ -20,7 +20,8 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@color/design_default_color_primary"
+                android:background="@drawable/img_7"
+                app:title=" "
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
 
             </androidx.appcompat.widget.Toolbar>
