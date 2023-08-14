@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
@@ -37,6 +38,7 @@ public class HomeActivity extends AppCompatActivity implements CarAdapter.OnItem
     private ChuyenXeService chuyenXeService;
     private DatVeService datVeService;
     private int user_ID;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,7 @@ public class HomeActivity extends AppCompatActivity implements CarAdapter.OnItem
         String userName = intent.getStringExtra("USER_NAME");
         UserService userService = new UserService(this);
         setUser_ID(userService.getIDByUserName(userName));
+        swipeRefreshLayout = findViewById(R.id.refreshLayout_Home);
         chuyenXeService = new ChuyenXeService(this);
         etDiaDiemDi = findViewById(R.id.etBenDiHome);
         etDiaDiemDen = findViewById(R.id.etBenDenHome);
@@ -111,6 +114,18 @@ public class HomeActivity extends AppCompatActivity implements CarAdapter.OnItem
         recyclerView.setAdapter(carAdapter);
 
         calendar = Calendar.getInstance();
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                dsChuyenXe = getCarListFromDatabase();
+                carAdapter = new CarAdapter(dsChuyenXe);
+                carAdapter.setOnItemClickListener(HomeActivity.this);
+                recyclerView.setAdapter(carAdapter);
+
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
     }
     private void showDatePickerDialog() {
         DatePickerDialog datePickerDialog = new DatePickerDialog(

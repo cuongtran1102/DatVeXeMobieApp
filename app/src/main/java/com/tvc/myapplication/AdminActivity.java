@@ -2,6 +2,7 @@ package com.tvc.myapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -9,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -73,7 +75,23 @@ public class AdminActivity extends AppCompatActivity implements NavigationView.O
             }
         }
         else if(id == R.id.nav_logout){
-            finish();
+            AlertDialog.Builder builder = new AlertDialog.Builder(AdminActivity.this);
+            builder.setTitle("Confirmation");
+            builder.setMessage("Bạn có muốn đăng xuất");
+            builder.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+
+                }
+            });
+            builder.setNegativeButton("Đăng xuất", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    finish();
+                }
+            });
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;

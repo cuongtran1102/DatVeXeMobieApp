@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/img_3">
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="71dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="36dp"
+            android:background="#816969"
+            android:text="chỗ"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/spinner_loaixe"
+            app:layout_constraintTop_toBottomOf="@+id/etGiaVe_addTD" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="47dp"
+            android:layout_marginTop="41dp"
+            android:text="Loại xe:"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etGiaVe_addTD" />
+
+        <EditText
+            android:id="@+id/etGiaVe_addTD"
+            android:layout_width="341dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="28dp"
+            android:background="#595353"
+            android:ems="10"
+            android:hint="Nhập Giá Vé"
+            android:inputType="numberDecimal"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etGioXuatPhat_addTD" />
+
+        <EditText
+            android:id="@+id/etGioXuatPhat_addTD"
+            android:layout_width="341dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="27dp"
+            android:background="#B68282"
+            android:ems="10"
+            android:hint="Chọn Giờ Xuất Phát"
+            android:inputType="none"
+            android:clickable="true"
+            android:focusable="false"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etBenDen_addTD" />
+
+        <EditText
+            android:id="@+id/etBenDen_addTD"
+            android:layout_width="341dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="19dp"
+            android:ems="10"
+            android:hint="Nhập Bến Đến"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etBenDi_addTD" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="85dp"
+            android:layout_marginTop="6dp"
+            android:text="Lập Lịch Tuyến Đường"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etBenDi_addTD"
+            android:layout_width="341dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="36dp"
+            android:ems="10"
+            android:hint="Nhập Bến Đi"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+        <Button
+            android:id="@+id/btnThem_addTD"
+            android:layout_width="346dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="184dp"
+            android:text="Thêm Tuyến Đường"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etGiaVe_addTD" />
+
+        <Spinner
+            android:id="@+id/spinner_loaixe"
+            android:layout_width="145dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="33dp"
+            android:background="#A37C7C"
+            android:textAlignment="center"
+            app:layout_constraintStart_toEndOf="@+id/textView14"
+            app:layout_constraintTop_toBottomOf="@+id/etGiaVe_addTD" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
