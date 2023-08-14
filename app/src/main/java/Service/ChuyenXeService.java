@@ -35,6 +35,22 @@ public class ChuyenXeService {
         database.insert("TuyenDuong", null, values);
         database.close();
     }
+    public boolean checkTuyenDuong(String benDi, String benDen, int loaiXe){
+        SQLiteDatabase database = db.getReadableDatabase();
+        String sql = "select dia_diem_di, dia_diem_den, " +
+                "loai_xe from TuyenDuong where dia_diem_di = ?" +
+                "and dia_diem_den = ? and loai_xe = ?";
+        Cursor cursor = database.rawQuery(sql, new String[]{benDi, benDen,
+                String.valueOf(loaiXe)});
+        cursor.moveToPosition(-1);
+        while(cursor.moveToNext()){
+            if(cursor.getString(0).equals(benDi) && cursor.getString(1).equals(benDen)
+            && cursor.getInt(2) == loaiXe){
+                return false;
+            }
+        }
+        return true;
+    }
     public void insertChuyenXe(String ngayDi, int maTuyenDuong){
         SQLiteDatabase database = db.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -163,6 +179,25 @@ public class ChuyenXeService {
             }
         }
         return true;
+    }
+    public void deleteChuyenXe(int id){
+        SQLiteDatabase database = db.getWritableDatabase();
+        database.delete("ChuyenXe", "id = ?",
+                new String[]{String.valueOf(id)});
+        database.close();
+    }
+
+    public void deleteVe(int id_chuyenxe){
+        SQLiteDatabase database = db.getWritableDatabase();
+        database.delete("Ve", "id_chuyenxe = ?",
+                new String[]{String.valueOf(id_chuyenxe)});
+        database.close();;
+    }
+    public void deleteDanhGia(int id_chuyenxe){
+        SQLiteDatabase database = db.getWritableDatabase();
+        database.delete("DanhGia", "id_chuyenxe = ?",
+                new String[]{String.valueOf(id_chuyenxe)});
+        database.close();
     }
 
 }

@@ -127,6 +127,9 @@ public class FragmentAddTrip extends Fragment implements TuyenDuongAdapter.OnIte
             public void onClick(View view) {
                 inputView.setVisibility(View.GONE);
                 swipeRefreshLayout.setVisibility(View.VISIBLE);
+                etBenDen.setVisibility(View.VISIBLE);
+                etBenDi.setVisibility(View.VISIBLE);
+                btnTraCuu.setVisibility(View.VISIBLE);
             }
         });
 
@@ -178,6 +181,9 @@ public class FragmentAddTrip extends Fragment implements TuyenDuongAdapter.OnIte
     public void onItemClick(TuyenDuong tuyenDuong) {
         this.tuyenDuong_add = tuyenDuong;
         swipeRefreshLayout.setVisibility(View.GONE);
+        etBenDen.setVisibility(View.GONE);
+        etBenDi.setVisibility(View.GONE);
+        btnTraCuu.setVisibility(View.GONE);
         inputView.setVisibility(View.VISIBLE);
 
         txtTenCX.setText(tuyenDuong.getTenTuyenDuong());
