@@ -18,10 +18,11 @@
 
     <FrameLayout
         android:id="@+id/frameLayoutQLTuyenDuong"
-        android:layout_width="406dp"
-        android:layout_height="620dp"
+        android:layout_width="match_parent"
+        android:layout_height="642dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnBack_QLTuyenDuong">
 
@@ -29,11 +30,12 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayoutQLTuyenDuong"
-        android:layout_width="408dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
         android:layout_marginStart="1dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="7dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.tabs.TabItem

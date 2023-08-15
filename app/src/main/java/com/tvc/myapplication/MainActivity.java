@@ -1,7 +1,9 @@
 package com.tvc.myapplication;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -88,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else{
                         Intent intent = new Intent(MainActivity.this, AdminActivity.class);
+                        intent.putExtra("USER_NAME_ADMIN", etUserName.getText().toString());
                         startActivity(intent);
                     }
                 }
@@ -109,5 +112,27 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy(){
         super.onDestroy();
         db.close();
+    }
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Confirmation");
+        builder.setMessage("Bạn có muốn thoát ứng dụng ?");
+        builder.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        builder.setNegativeButton("Thoát", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // Thoát ứng dụng
+                finishAffinity();
+                System.exit(0);
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }

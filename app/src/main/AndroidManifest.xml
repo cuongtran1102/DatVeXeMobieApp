@@ -19,7 +19,7 @@
             android:name=".QLChuyenXeActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".HomeActivity"
             android:exported="false" />
         <activity
             android:name=".AccountActivity"
@@ -31,13 +31,13 @@
             android:name=".DatVeActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".AdminActivity"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

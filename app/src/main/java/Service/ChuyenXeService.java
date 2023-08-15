@@ -51,6 +51,7 @@ public class ChuyenXeService {
         }
         return true;
     }
+
     public void insertChuyenXe(String ngayDi, int maTuyenDuong){
         SQLiteDatabase database = db.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -118,6 +119,43 @@ public class ChuyenXeService {
         cursor.close();
         database.close();
         return listChuyenXe;
+    }
+    public void deleteChuyenXeByIDTuyenDuong(int idTuyenDuong){
+        SQLiteDatabase database = db.getReadableDatabase();
+        String sql = "select id from ChuyenXe where ma_tuyen_duong = ?";
+        Cursor cursor = database.rawQuery(sql,
+                new String[]{String.valueOf(idTuyenDuong)});
+        cursor.moveToPosition(-1);
+        while(cursor.moveToNext()){
+            deleteChuyenXe(cursor.getInt(0));
+        }
+        cursor.close();
+        database.close();
+    }
+    public void deleteVeByIDTuyenDuong(int idTuyenDuong){
+        SQLiteDatabase database = db.getReadableDatabase();
+        String sql = "select id from ChuyenXe where ma_tuyen_duong = ?";
+        Cursor cursor = database.rawQuery(sql,
+                new String[]{String.valueOf(idTuyenDuong)});
+        cursor.moveToPosition(-1);
+        while(cursor.moveToNext()){
+            deleteVe(cursor.getInt(0));
+        }
+        cursor.close();
+        database.close();
+    }
+
+    public void deleteDanhGiaByIDTuyenDuong(int idTuyenDuong){
+        SQLiteDatabase database = db.getReadableDatabase();
+        String sql = "select id from ChuyenXe where ma_tuyen_duong = ?";
+        Cursor cursor = database.rawQuery(sql,
+                new String[]{String.valueOf(idTuyenDuong)});
+        cursor.moveToPosition(-1);
+        while(cursor.moveToNext()){
+            deleteDanhGia(cursor.getInt(0));
+        }
+        cursor.close();
+        database.close();
     }
     public List<TuyenDuong> getListTuyenDuong(){
         SQLiteDatabase database = db.getReadableDatabase();
@@ -199,5 +237,12 @@ public class ChuyenXeService {
                 new String[]{String.valueOf(id_chuyenxe)});
         database.close();
     }
+    public void deleteTuyenDuong(int id){
+        SQLiteDatabase database = db.getWritableDatabase();
+        database.delete("TuyenDuong", "id = ?",
+                new String[]{String.valueOf(id)});
+        database.close();
+    }
+
 
 }

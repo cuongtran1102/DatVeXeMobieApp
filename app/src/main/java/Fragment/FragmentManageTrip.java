@@ -5,10 +5,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,9 +20,11 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.tvc.myapplication.R;
 
+import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import Pojo.ChuyenXe;
 import Service.CarAdapter;
@@ -30,6 +36,11 @@ public class FragmentManageTrip extends Fragment implements CarAdapter.OnItemCli
     private List<ChuyenXe> dsChuyenXe;
     private CarAdapter carAdapter;
     private SwipeRefreshLayout refreshLayout;
+    private ConstraintLayout inputView;
+    private ImageButton btnClose;
+    private Button btnHuy;
+    private TextView txtBenDi, txtBenDEn, txtNgayDi, txtGioDi, txtGiaVe, txtSLGhe;
+    private ChuyenXe selectedChuyenXe;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -56,6 +67,57 @@ public class FragmentManageTrip extends Fragment implements CarAdapter.OnItemCli
                 refreshData();
             }
         });
+
+        txtBenDi = rootView.findViewById(R.id.txtBenDi_manageCX);
+        txtBenDEn = rootView.findViewById(R.id.txtBenDen_manageCX);
+        txtNgayDi = rootView.findViewById(R.id.txtNgayDi_manageCX);
+        txtGioDi = rootView.findViewById(R.id.txtGioDi_manageCX);
+        txtGiaVe = rootView.findViewById(R.id.txtGiaVe_manageCX);
+        txtSLGhe = rootView.findViewById(R.id.txtSoLuongGhe_manageCX);
+
+        btnClose = rootView.findViewById(R.id.btnClose_ManageCX);
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                inputView.setVisibility(View.GONE);
+                refreshLayout.setVisibility(View.VISIBLE);
+            }
+        });
+        btnHuy = rootView.findViewById(R.id.btnHuy_manageCX);
+        btnHuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                builder.setTitle("Confirmation");
+                builder.setMessage("Bạn có muốn HỦY chuyến xe");
+
+                builder.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        chuyenXeService.deleteVe(selectedChuyenXe.getIdChuyenXe());
+                        chuyenXeService.deleteDanhGia(selectedChuyenXe.getIdChuyenXe());
+                        chuyenXeService.deleteChuyenXe(selectedChuyenXe.getIdChuyenXe());
+
+                        inputView.setVisibility(View.GONE);
+                        dsChuyenXe = getCarListFromDatabase();
+                        carAdapter = new CarAdapter(dsChuyenXe);
+                        carAdapter.setOnItemClickListener(FragmentManageTrip.this);
+                        recyclerView.setAdapter(carAdapter);
+                        refreshLayout.setVisibility(View.VISIBLE);
+                    }
+                });
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
+
+        inputView = rootView.findViewById(R.id.inputView_manageChuyenXe);
         return rootView;
     }
 
@@ -74,31 +136,19 @@ public class FragmentManageTrip extends Fragment implements CarAdapter.OnItemCli
 
     @Override
     public void onItemClick(ChuyenXe chuyenXe) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle("Confirmation");
-        builder.setMessage("Bạn có muốn HỦY chuyến xe");
+        this.selectedChuyenXe = chuyenXe;
+        inputView.setVisibility(View.VISIBLE);
+        refreshLayout.setVisibility(View.GONE);
 
-        builder.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-
-            }
-        });
-        builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                chuyenXeService.deleteVe(chuyenXe.getIdChuyenXe());
-                chuyenXeService.deleteDanhGia(chuyenXe.getIdChuyenXe());
-                chuyenXeService.deleteChuyenXe(chuyenXe.getIdChuyenXe());
-
-                dsChuyenXe = getCarListFromDatabase();
-                carAdapter = new CarAdapter(dsChuyenXe);
-                carAdapter.setOnItemClickListener(FragmentManageTrip.this);
-                recyclerView.setAdapter(carAdapter);
-            }
-        });
-        AlertDialog dialog = builder.create();
-        dialog.show();
+        txtBenDi.setText(chuyenXe.getBenDi());
+        txtBenDEn.setText(chuyenXe.getBenDen());
+        txtNgayDi.setText(chuyenXe.getNgayDi().toString());
+        txtGioDi.setText(chuyenXe.getGioXuatPhat().toString());
+        txtSLGhe.setText(String.valueOf(chuyenXe.getSoLuongGhe()));
+        NumberFormat format = NumberFormat.getCurrencyInstance(new
+                Locale("vi", "VN"));
+        String fomatted = format.format(chuyenXe.getGiaVe());
+        txtGiaVe.setText(fomatted);
     }
 
     private void refreshData(){

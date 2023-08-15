@@ -191,4 +191,27 @@ public class HomeActivity extends AppCompatActivity implements CarAdapter.OnItem
     public void setUser_ID(int user_ID) {
         this.user_ID = user_ID;
     }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Confirmation");
+        builder.setMessage("Bạn có muốn thoát ứng dụng ?");
+        builder.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        builder.setNegativeButton("Thoát", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // Thoát ứng dụng
+                finishAffinity();
+                System.exit(0);
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
 }

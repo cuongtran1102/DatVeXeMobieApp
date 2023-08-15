@@ -29,6 +29,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="19dp"
             android:layout_marginEnd="11dp"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView7">
@@ -44,5 +45,213 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView7" />
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/inputView_manageChuyenXe"
+            android:layout_width="378dp"
+            android:layout_height="520dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="8dp"
+            android:background="#A2C1ED"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView7">
+
+            <TextView
+                android:id="@+id/txtSoLuongGhe_manageCX"
+                android:layout_width="100dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="31dp"
+                android:text="SL"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtGiaVe_manageCX" />
+
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="130dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="86dp"
+                android:text="Số lượng ghế:"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/txtSoLuongGhe_manageCX"
+                app:layout_constraintTop_toBottomOf="@+id/txtGiaVe_manageCX" />
+
+            <TextView
+                android:id="@+id/txtGiaVe_manageCX"
+                android:layout_width="194dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="21dp"
+                android:layout_marginEnd="31dp"
+                android:text="giá vé"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtGioDi_manageCX" />
+
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="70dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="21dp"
+                android:text="Giá vé:"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView34" />
+
+            <TextView
+                android:id="@+id/txtGioDi_manageCX"
+                android:layout_width="194dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="21dp"
+                android:layout_marginEnd="31dp"
+                android:text="giờ đi"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNgayDi_manageCX" />
+
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="70dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="21dp"
+                android:text="Giờ đi:"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+            <TextView
+                android:id="@+id/txtNgayDi_manageCX"
+                android:layout_width="194dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="21dp"
+                android:layout_marginEnd="31dp"
+                android:text="ngày đi"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtBenDen_manageCX" />
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="75dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="21dp"
+                android:text="Ngày đi"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+            <TextView
+                android:id="@+id/txtBenDen_manageCX"
+                android:layout_width="194dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="31dp"
+                android:text="Bến đến"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtBenDi_manageCX" />
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="80dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="19dp"
+                android:text="Bến đến:"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+            <TextView
+                android:id="@+id/txtBenDi_manageCX"
+                android:layout_width="194dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="31dp"
+                android:text="Bến đi"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+            <ImageButton
+                android:id="@+id/btnClose_ManageCX"
+                android:layout_width="55dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/baseline_close_24" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="74dp"
+                android:layout_marginTop="48dp"
+                android:text="Thông Tin Chuyến Xe"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="70dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="17dp"
+                android:text="Bến đi:"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+            <Button
+                android:id="@+id/btnHuy_manageCX"
+                android:layout_width="307dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="6dp"
+                android:text="Hủy Chuyến Xe"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
