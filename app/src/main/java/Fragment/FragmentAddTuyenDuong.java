@@ -31,6 +31,7 @@ public class FragmentAddTuyenDuong extends Fragment {
     private Spinner spinner;
     private List<String> dsLoaiXe;
     private ChuyenXeService chuyenXeService;
+    private int selectedLoaiXe;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -54,7 +55,7 @@ public class FragmentAddTuyenDuong extends Fragment {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+                selectedLoaiXe = Integer.parseInt(spinner.getSelectedItem().toString());
             }
 
             @Override
@@ -62,7 +63,6 @@ public class FragmentAddTuyenDuong extends Fragment {
 
             }
         });
-        int selectedLoaiXe = Integer.parseInt(spinner.getSelectedItem().toString());
         etGioKhoiHanh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
