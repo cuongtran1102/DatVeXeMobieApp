@@ -23,7 +23,7 @@
             android:id="@+id/tvTripName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="VÉ XE ĐÃ ĐẶT"
+            android:text="VÉ ĐÃ ĐI"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -79,13 +79,13 @@
             android:textSize="14sp" />
 
         <Button
-            android:id="@+id/cancelButton"
+            android:id="@+id/Danhgia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-            android:text="Hủy Vé" />
+            android:text="Đánh Gía" />
     </LinearLayout>
 
     <TextView

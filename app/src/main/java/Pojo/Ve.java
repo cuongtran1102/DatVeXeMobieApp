@@ -1,5 +1,7 @@
 package Pojo;
 
+import java.time.LocalTime;
+
 public class Ve {
         private int id;
         private int soGhe;
@@ -8,8 +10,13 @@ public class Ve {
         private String gioDatVe;
         private int idChuyenXe;
         private int idKhachHang;
+    private String diaDiemDi;
+    private float giaNiemYet;
+    private int loaiXe;
+    private String diaDiemDen;
+    private LocalTime gioXuatPhat;
 
-        public Ve(int id, int soGhe, float giaVe, String ngayDatVe, String gioDatVe, int idChuyenXe, int idKhachHang) {
+    public Ve(int id, int soGhe, float giaVe, String ngayDatVe, String gioDatVe, int idChuyenXe, int idKhachHang) {
             this.id = id;
             this.soGhe = soGhe;
             this.giaVe = giaVe;
@@ -19,7 +26,11 @@ public class Ve {
             this.idKhachHang = idKhachHang;
         }
 
-        public int getId() {
+    public static int getDiaDiemDen() {
+        return 0;
+    }
+
+    public int getId() {
             return id;
         }
 
@@ -57,6 +68,39 @@ public class Ve {
                     "\nID chuyến xe: " + idChuyenXe +
                     "\nID khách hàng: " + idKhachHang;
         }
+
+    public void setDiaDiemDi(String diaDiemDi) {
+        this.diaDiemDi = diaDiemDi;
     }
 
+
+
+    public int getLoaiXe() {
+        return loaiXe;
+    }
+
+    public void setLoaiXe(int loaiXe) {
+        this.loaiXe = loaiXe;
+    }
+
+
+    public float getGiaNiemYet() {
+        return giaNiemYet;
+    }
+
+    public void setGiaNiemYet(float giaNiemYet) {
+        this.giaNiemYet = giaNiemYet;
+    }
+
+    public LocalTime getGioXuatPhat() {
+        return gioXuatPhat;
+    }
+
+    public void setGioXuatPhat(LocalTime gioXuatPhat) {
+        this.gioXuatPhat = gioXuatPhat;
+    }
+
+    public String getDiaDiemDi() {
+        return diaDiemDi;
+    }}
 
