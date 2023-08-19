@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:elevation="2dp"
+    android:padding="8dp"
+    app:cardBackgroundColor="@color/white">
+
+    <!-- Nội dung chứa thông tin của chuyến xe -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Tên chuyến xe -->
+        <TextView
+            android:id="@+id/tvTripName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên chuyến xe"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Ngày đi -->
+        <TextView
+            android:id="@+id/tvTripDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ngày đi: 01/01/2023"
+            android:textSize="14sp" />
+
+        <!-- Giờ xuất phát -->
+        <TextView
+            android:id="@+id/tvTripTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giờ xuất phát: 08:00 AM"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- Riêng tiền vé nằm ở góc bên phải của CardView -->
+    <TextView
+        android:id="@+id/tvTicketPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:text="200.000 VNĐ"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+</androidx.cardview.widget.CardView>

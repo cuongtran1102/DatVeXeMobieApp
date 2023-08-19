@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:elevation="2dp"
+    android:padding="8dp"
+    app:cardBackgroundColor="@color/white">
+
+    <!-- Nội dung chứa thông tin của chuyến xe -->
+
+    <!-- Riêng tiền vé nằm ở góc bên phải của CardView -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="229dp"
+        android:orientation="vertical">
+
+        <!-- Tên chuyến xe -->
+        <TextView
+            android:id="@+id/tvTripName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VÉ XE ĐÃ ĐẶT"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID:0001"
+            android:textSize="14sp" />
+        <!-- Ngày đi -->
+        <TextView
+            android:id="@+id/SoGhe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Số ghế:01"
+            android:textSize="14sp" />
+
+
+        <!-- Ngày đi -->
+        <TextView
+            android:id="@+id/tvTripDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ngày đi: 01/01/2023"
+            android:textSize="14sp" />
+
+        <!-- Giờ xuất phát -->
+        <TextView
+            android:id="@+id/tvTripTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giờ xuất phát: 08:00 AM"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/LoaiXe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loại xe: 16 chỗ "
+            android:textSize="14sp" />
+        <!-- Ngày đi -->
+        <TextView
+            android:id="@+id/DiemDi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Điểm đi: Thành phố Hồ Chí Minh"
+            android:textSize="14sp" />
+        <!-- Ngày đi -->
+        <TextView
+            android:id="@+id/DiemDen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Điểm đến: An Giang"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="Hủy Vé" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvTicketPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:text="200.000 VNĐ"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+</androidx.cardview.widget.CardView>
